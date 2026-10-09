@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter - Prima esercitazione',
       theme: ThemeData(
         // This is the theme of your application.
@@ -116,11 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
-            const Text('Il tuo contatore è stato incrementato tutte queste volte:'),
+            const Text('Il tuo contatore è stato incrementato'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            const Text('volte'),
 
             if (_counter == 10) ...[
               const SizedBox(height: 24),
@@ -143,7 +145,6 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButton(
             onPressed: _resetCounter,
             tooltip: 'Reset',
-            backgroundColor: Colors.redAccent,
             child: const Icon(Icons.refresh),
           ),
           const SizedBox(width: 16),
